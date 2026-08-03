@@ -67,13 +67,18 @@ export default function App() {
   }
 
   const handleFormSubmit = async (formData) => {
-    const newRequest = await addRequest(formData)
-    if (newRequest) {
-      setLastRequest(newRequest)
-      setShowForm(false)
-      setShowSuccess(true)
-    } else {
-      alert('Ошибка при отправке заявки. Попробуйте ещё раз.')
+    try {
+      const newRequest = await addRequest(formData)
+      if (newRequest) {
+        setLastRequest(newRequest)
+        setShowForm(false)
+        setShowSuccess(true)
+      } else {
+        alert('Ошибка при отправке заявки. Попробуйте ещё раз.')
+      }
+    } catch (error) {
+      console.error('Ошибка:', error)
+      alert('Произошла ошибка. Попробуйте ещё раз.')
     }
   }
 
