@@ -1,75 +1,96 @@
+// src/data/services.js
+
+// Путь к папке images в корне проекта
+const imagesPath = '/images/';
+
 export const services = [
   {
     id: 1,
-    title: "Шоколадный час 🍫",
+    title: "Шоколадный час",
     description: "Ежедневное бесплатное шоколадное фондю с 15:00 до 16:00",
     price: "Бесплатно",
     category: "special",
     isPopular: true,
-    image: "https://cdn.pixabay.com/photo/2018/02/22/06/44/chocolate-3171824_640.jpg"
+    image: `${imagesPath}chocolate.jpg`,
+    duration: "1 час",
+    includes: ["Фондю", "Трюфели", "Горячий шоколад"]
   },
   {
     id: 2,
-    title: "Премиум СПА 💆",
+    title: "Премиум СПА",
     description: "Расслабляющие процедуры с массажем и обертываниями",
-    price: "от 5 000 ₽",
+    price: "от 480 CHF",
     category: "spa",
     isPopular: true,
-    image: "https://cdn.pixabay.com/photo/2016/11/14/21/03/massage-1824566_640.jpg"
+    image: `${imagesPath}spa.jpg`,
+    duration: "1.5 часа",
+    includes: ["Массаж", "Обертывание", "Сауна"]
   },
   {
     id: 3,
-    title: "Ресторан Mövenpick 🍽️",
+    title: "Ресторан Mövenpick",
     description: "Изысканная швейцарская кухня от шеф-повара",
-    price: "от 2 500 ₽",
+    price: "от 240 CHF",
     category: "restaurant",
     isPopular: true,
-    image: "https://cdn.pixabay.com/photo/2016/11/18/22/21/restaurant-1837150_640.jpg"
+    image: `${imagesPath}restaurant.jpg`,
+    duration: "2 часа",
+    includes: ["Ужин", "Вино", "Десерт"]
   },
   {
     id: 4,
-    title: "Люкс номер 🛏️",
+    title: "Люкс номер",
     description: "Просторный номер с панорамным видом на горы",
-    price: "от 15 000 ₽/ночь",
+    price: "от 1'400 CHF/ночь",
     category: "room",
     isPopular: true,
-    image: "https://cdn.pixabay.com/photo/2016/06/29/15/45/bedroom-1487188_640.jpg"
+    image: `${imagesPath}room.jpg`,
+    duration: "1 день",
+    includes: ["Завтрак", "Шоколад", "Халат"]
   },
   {
     id: 5,
-    title: "Трансфер из аэропорта 🚗",
+    title: "Трансфер из аэропорта",
     description: "Встреча с табличкой, комфортабельный автомобиль",
-    price: "3 000 ₽",
+    price: "290 CHF",
     category: "transport",
     isPopular: false,
-    image: "https://cdn.pixabay.com/photo/2018/04/25/07/46/mercedes-benz-3349644_640.jpg"
+    image: `${imagesPath}transfer.jpg`,
+    duration: "40 мин",
+    includes: ["Встреча", "Вода", "Wi-Fi"]
   },
   {
     id: 6,
-    title: "Фитнес центр 💪",
+    title: "Фитнес центр",
     description: "Современные тренажеры и йога",
     price: "Бесплатно для гостей",
     category: "sport",
     isPopular: false,
-    image: "https://cdn.pixabay.com/photo/2016/11/08/07/09/gym-1807533_640.jpg"
+    image: `${imagesPath}fitness.jpg`,
+    duration: "1 час",
+    includes: ["Тренажеры", "Йога", "Душ"]
   },
   {
     id: 7,
-    title: "Конференц-зал 📊",
+    title: "Конференц-зал",
     description: "Проведение бизнес-мероприятий до 100 человек",
-    price: "от 20 000 ₽",
+    price: "от 1'900 CHF",
     category: "business",
     isPopular: false,
-    image: "https://cdn.pixabay.com/photo/2015/01/08/18/25/entrepreneur-593358_640.jpg"
+    image: `${imagesPath}conference.jpg`,
+    duration: "4 часа",
+    includes: ["Проектор", "Микрофон", "Кофе-брейк"]
   },
   {
     id: 8,
-    title: "Бассейн 🏊",
+    title: "Бассейн",
     description: "Крытый подогреваемый бассейн и джакузи",
     price: "Бесплатно",
     category: "sport",
     isPopular: false,
-    image: "https://cdn.pixabay.com/photo/2015/05/15/14/29/pool-768619_640.jpg"
+    image: `${imagesPath}pool.jpg`,
+    duration: "Не ограничено",
+    includes: ["Бассейн", "Джакузи", "Шезлонги"]
   }
 ];
 

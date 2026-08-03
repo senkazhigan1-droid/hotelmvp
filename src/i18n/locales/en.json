@@ -1,0 +1,150 @@
+{
+  "header": {
+    "title": "Mövenpick Hotel",
+    "subtitle": "Swiss Hospitality",
+    "chocolateHour": "Chocolate Hour",
+    "chocolateTime": "daily 3:00–4:00 PM",
+    "nav": {
+      "services": "Services",
+      "about": "About",
+      "contacts": "Contacts"
+    }
+  },
+  "hero": {
+    "title": "Mövenpick Hotel",
+    "subtitle": "Swiss Hospitality",
+    "description": "Discover a world of luxury where every detail is designed for your perfect stay.",
+    "buttons": {
+      "book": "Book Now",
+      "learnMore": "Learn More"
+    }
+  },
+  "services": {
+    "title": "Luxury in Every Detail",
+    "subtitle": "Our Services",
+    "description": "From the famous chocolate hour to premium transfers — we have created the perfect conditions for your stay.",
+    "popular": "Popular",
+    "showAll": "Show All Services",
+    "details": "Details",
+    "book": "Book",
+    "free": "Free",
+    "list": {
+      "chocolate": {
+        "title": "Chocolate Hour",
+        "description": "Daily free chocolate fondue from 3:00 to 4:00 PM",
+        "price": "Free"
+      },
+      "spa": {
+        "title": "Premium SPA",
+        "description": "Relaxing treatments with massage and wraps",
+        "price": "from 480 CHF"
+      },
+      "restaurant": {
+        "title": "Mövenpick Restaurant",
+        "description": "Exquisite Swiss cuisine from the chef",
+        "price": "from 240 CHF"
+      },
+      "room": {
+        "title": "Luxury Suite",
+        "description": "Spacious room with panoramic mountain view",
+        "price": "from 1400 CHF/night"
+      },
+      "transfer": {
+        "title": "Airport Transfer",
+        "description": "Meeting with a sign, comfortable car",
+        "price": "290 CHF"
+      },
+      "fitness": {
+        "title": "Fitness Center",
+        "description": "Modern gym equipment and yoga",
+        "price": "Free for guests"
+      },
+      "conference": {
+        "title": "Conference Hall",
+        "description": "Business events for up to 100 people",
+        "price": "from 1900 CHF"
+      },
+      "pool": {
+        "title": "Swimming Pool",
+        "description": "Heated indoor pool and jacuzzi",
+        "price": "Free"
+      }
+    }
+  },
+  "about": {
+    "title": "Swiss Hospitality",
+    "subtitle": "About Us",
+    "description": "Mövenpick Hotel is not just a hotel, it's a whole philosophy of hospitality. We combine Swiss quality, impeccable service and a unique chocolate tradition that makes every day special.",
+    "years": "Years of excellence",
+    "guests": "Satisfied guests",
+    "rating": "Highest category",
+    "button": "Our Services"
+  },
+  "advantages": {
+    "title": "Why Choose Us",
+    "subtitle": "Advantages",
+    "items": {
+      "chocolate": "Chocolate Hour",
+      "chocolateDesc": "Daily from 3:00 to 4:00 PM",
+      "spa": "Premium SPA",
+      "spaDesc": "Best treatments for body and soul",
+      "restaurant": "Michelin Cuisine",
+      "restaurantDesc": "World-class chef dishes",
+      "view": "Mountain View",
+      "viewDesc": "Panoramic views from every room"
+    }
+  },
+  "footer": {
+    "description": "Swiss hospitality since 1995",
+    "contacts": "Contacts",
+    "address": "Switzerland, Interlaken",
+    "phone": "+41 79 123 45 67",
+    "email": "info@movenpick-hotel.ch",
+    "links": "Quick Links",
+    "subscribe": "Subscribe",
+    "subscribeDesc": "Stay updated with all news",
+    "rights": "2025 Mövenpick Hotel | All rights reserved"
+  },
+  "form": {
+    "title": "Submit a Request",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "service": "Service",
+    "date": "Date",
+    "time": "Time",
+    "guests": "Number of guests",
+    "comment": "Comment",
+    "submit": "Submit Request"
+  },
+  "success": {
+    "title": "Request Sent!",
+    "thanks": "Thank you, {name}!",
+    "message": "We will contact you shortly.",
+    "chocolateBonus": "A chocolate compliment awaits you!",
+    "newRequest": "New Request",
+    "close": "Close"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "subtitle": "Manage Mövenpick Hotel requests",
+    "stats": {
+      "total": "Total",
+      "pending": "Pending",
+      "processing": "Processing",
+      "confirmed": "Confirmed",
+      "completed": "Completed"
+    },
+    "search": "Search by name, phone, service...",
+    "sortBy": {
+      "date": "By date",
+      "name": "By name",
+      "service": "By service",
+      "status": "By status"
+    },
+    "update": "Update",
+    "noRequests": "No requests yet",
+    "actions": "Actions",
+    "delete": "Delete"
+  }
+}
