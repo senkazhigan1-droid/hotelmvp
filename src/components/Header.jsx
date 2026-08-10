@@ -10,25 +10,14 @@ export default function Header() {
     <header className="bg-white border-b border-gold-100 shadow-soft">
       <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* Только логотип (без текста, звёзд и SWISS LUXURY) */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-white font-serif font-bold text-lg">
+            <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-white text-xl font-serif font-bold">
               MH
-            </div>
-            <div>
-              <h1 className="text-2xl font-serif font-bold text-warm-dark">
-                <span className="text-gold">Mövenpick</span> Hotel
-              </h1>
-              <div className="flex items-center gap-2">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20">
-                    <path d="M10 1L12.39 6.99L19 7.76L14.5 12.15L15.88 18.52L10 15.37L4.12 18.52L5.5 12.15L1 7.76L7.61 6.99L10 1Z" />
-                  </svg>
-                ))}
-                <span className="text-xs text-gray-400 tracking-widest ml-1">SWISS LUXURY</span>
-              </div>
             </div>
           </div>
 
+          {/* Навигация */}
           <nav className="flex items-center gap-6 text-sm">
             <a href="#services" className="text-gray-600 hover:text-gold transition-colors">
               {t('header.nav.services')}

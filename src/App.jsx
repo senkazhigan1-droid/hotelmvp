@@ -102,6 +102,7 @@ export default function App() {
       <Header />
       <Hero onScroll={handleHeroScroll} showAdminLink={false} />
 
+      {/* Секция Услуги */}
       <section id="services" className="container mx-auto px-4 py-16 md:py-24">
         <div className="text-center mb-12 md:mb-16">
           <span className="text-gold text-sm font-semibold tracking-widest uppercase">
@@ -145,6 +146,7 @@ export default function App() {
         )}
       </section>
 
+      {/* Секция О нас */}
       <section id="about" className="bg-warm py-16 md:py-24 border-t border-gold-100">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -221,6 +223,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Секция Преимущества */}
       <section className="py-16 md:py-24 bg-cream">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -265,6 +268,86 @@ export default function App() {
         </div>
       </section>
 
+      {/* ============================================= */}
+      {/* ⬇️⬇️⬇️ НОВАЯ СЕКЦИЯ "КОНТАКТЫ" ⬇️⬇️⬇️ */}
+      {/* ============================================= */}
+      <section id="contact" className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-gold text-sm font-semibold tracking-widest uppercase">
+              Контакты
+            </span>
+            <h2 className="text-4xl font-bold text-warm-dark mt-2 font-serif">
+              Свяжитесь с нами
+            </h2>
+            <div className="divider-gold"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Мы всегда рады ответить на ваши вопросы
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            {/* Левая колонка - адрес и контакты */}
+            <div>
+              <h3 className="font-serif text-xl font-bold text-warm-dark mb-4">Наш адрес</h3>
+              <p className="text-gray-600 mb-2">Швейцария, Интерлакен</p>
+              <p className="text-gray-600 mb-2">Höheweg 41, 3800 Interlaken</p>
+              <p className="text-gray-600 mb-4">🇨🇭 Switzerland</p>
+              
+              <h3 className="font-serif text-xl font-bold text-warm-dark mb-4 mt-6">Контакты</h3>
+              <p className="text-gray-600 mb-2">📞 +41 79 123 45 67</p>
+              <p className="text-gray-600 mb-2">✉️ info@movenpick-hotel.ch</p>
+              <p className="text-gray-600">🌐 www.movenpick-hotel.ch</p>
+
+              {/* Кнопка для быстрой связи */}
+              <a href="#services" className="btn-primary inline-block mt-6">
+                Забронировать сейчас
+              </a>
+            </div>
+
+            {/* Правая колонка - часы работы */}
+            <div>
+              <h3 className="font-serif text-xl font-bold text-warm-dark mb-4">Часы работы</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center border-b border-gold-50 pb-3">
+                  <span className="text-gray-600">Ресепшн</span>
+                  <span className="text-warm-dark font-medium">Круглосуточно</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-gold-50 pb-3">
+                  <span className="text-gray-600">Шоколадный час</span>
+                  <span className="text-warm-dark font-medium">15:00 – 16:00</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-gold-50 pb-3">
+                  <span className="text-gray-600">Ресторан</span>
+                  <span className="text-warm-dark font-medium">12:00 – 23:00</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-gold-50 pb-3">
+                  <span className="text-gray-600">СПА-центр</span>
+                  <span className="text-warm-dark font-medium">10:00 – 21:00</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600">Фитнес</span>
+                  <span className="text-warm-dark font-medium">06:00 – 22:00</span>
+                </div>
+              </div>
+
+              {/* Дополнительная информация */}
+              <div className="mt-6 p-4 bg-warm rounded-soft border border-gold-100">
+                <p className="text-sm text-gray-600">
+                  🍫 <span className="font-medium text-warm-dark">Ежедневный шоколадный час</span>
+                  <br />
+                  Приходите и наслаждайтесь нашими знаменитыми трюфелями!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ============================================= */}
+      {/* ⬆️⬆️⬆️ КОНЕЦ СЕКЦИИ "КОНТАКТЫ" ⬆️⬆️⬆️ */}
+      {/* ============================================= */}
+
+      {/* Футер */}
       <footer className="bg-warm-dark text-white py-12 border-t border-gold-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -283,7 +366,7 @@ export default function App() {
               <ul className="space-y-2 text-sm">
                 <li><a href="#services" className="text-gray-400 hover:text-gold-200 transition-colors">{t('header.nav.services')}</a></li>
                 <li><a href="#about" className="text-gray-400 hover:text-gold-200 transition-colors">{t('header.nav.about')}</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-gold-200 transition-colors">{t('header.nav.contacts')}</a></li>
+                <li><a href="#contact" className="text-gray-400 hover:text-gold-200 transition-colors">{t('header.nav.contacts')}</a></li>
               </ul>
             </div>
             <div>
