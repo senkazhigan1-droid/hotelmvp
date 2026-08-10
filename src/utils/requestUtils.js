@@ -66,6 +66,25 @@ export const changeRequestStatus = async (id, status) => {
   return updateRequest(id, { status })
 }
 
+export const getRequestsStats = (requests) => {
+  const stats = {
+    total: requests.length,
+    pending: 0,
+    processing: 0,
+    confirmed: 0,
+    completed: 0,
+    cancelled: 0
+  }
+
+  requests.forEach(r => {
+    if (stats[r.status] !== undefined) {
+      stats[r.status]++
+    }
+  })
+
+  return stats
+}
+
 export const deleteRequest = async (id) => {
   const { error } = await supabase
     .from('requests')
