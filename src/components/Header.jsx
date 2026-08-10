@@ -10,13 +10,12 @@ export default function Header() {
     <header className="bg-white border-b border-gold-100 shadow-soft">
       <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          {/* Логотип */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-white font-serif font-bold text-lg">
               MH
             </div>
             <div>
-              <h1 className="text-2xl font-serif font-bold text-gray-800">
+              <h1 className="text-2xl font-serif font-bold text-warm-dark">
                 <span className="text-gold">Mövenpick</span> Hotel
               </h1>
               <div className="flex items-center gap-2">
@@ -30,7 +29,6 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Навигация */}
           <nav className="flex items-center gap-6 text-sm">
             <a href="#services" className="text-gray-600 hover:text-gold transition-colors">
               {t('header.nav.services')}

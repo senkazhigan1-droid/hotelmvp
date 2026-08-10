@@ -107,7 +107,7 @@ export default function App() {
           <span className="text-gold text-sm font-semibold tracking-widest uppercase">
             {t('services.subtitle')}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mt-2 mb-4 font-serif">
+          <h2 className="text-4xl md:text-5xl font-bold text-warm-dark mt-2 mb-4 font-serif">
             {t('services.title')}
           </h2>
           <div className="divider-gold"></div>
@@ -121,7 +121,7 @@ export default function App() {
               className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-soft ${
                 showOnlyPopular 
                   ? 'bg-gold text-white hover:bg-gold-600' 
-                  : 'bg-white text-gray-700 hover:bg-gray-50 border border-gold-200'
+                  : 'bg-white text-warm-dark hover:bg-warm border border-gold-200'
               }`}
             >
               {showOnlyPopular ? t('services.showAll') : t('services.popular')}
@@ -145,14 +145,14 @@ export default function App() {
         )}
       </section>
 
-      <section id="about" className="bg-white py-16 md:py-24 border-t border-gold-100">
+      <section id="about" className="bg-warm py-16 md:py-24 border-t border-gold-100">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-gold text-sm font-semibold tracking-widest uppercase">
                 {t('about.subtitle')}
               </span>
-              <h2 className="text-4xl font-bold text-gray-800 mt-2 mb-4 font-serif">
+              <h2 className="text-4xl font-bold text-warm-dark mt-2 mb-4 font-serif">
                 {t('about.title')}
               </h2>
               <div className="w-16 h-1 bg-gold rounded-full mb-6"></div>
@@ -185,7 +185,7 @@ export default function App() {
                   alt="Номер" 
                   className="rounded-soft shadow-medium w-full h-48 object-cover border border-gold-100"
                   onError={(e) => {
-                    e.target.src = 'https://placehold.co/400x300/8C7343/FFFFFF?text=Номер'
+                    e.target.src = 'https://placehold.co/400x300/B8860B/FFFFFF?text=Номер'
                   }}
                 />
                 <img 
@@ -193,7 +193,7 @@ export default function App() {
                   alt="Спа" 
                   className="rounded-soft shadow-medium w-full h-48 object-cover mt-8 border border-gold-100"
                   onError={(e) => {
-                    e.target.src = 'https://placehold.co/400x300/8C7343/FFFFFF?text=СПА'
+                    e.target.src = 'https://placehold.co/400x300/B8860B/FFFFFF?text=СПА'
                   }}
                 />
                 <img 
@@ -201,7 +201,7 @@ export default function App() {
                   alt="Ресторан" 
                   className="rounded-soft shadow-medium w-full h-48 object-cover border border-gold-100"
                   onError={(e) => {
-                    e.target.src = 'https://placehold.co/400x300/8C7343/FFFFFF?text=Ресторан'
+                    e.target.src = 'https://placehold.co/400x300/B8860B/FFFFFF?text=Ресторан'
                   }}
                 />
                 <img 
@@ -209,7 +209,7 @@ export default function App() {
                   alt="Шоколад" 
                   className="rounded-soft shadow-medium w-full h-48 object-cover mt-8 border border-gold-100"
                   onError={(e) => {
-                    e.target.src = 'https://placehold.co/400x300/8C7343/FFFFFF?text=Шоколад'
+                    e.target.src = 'https://placehold.co/400x300/B8860B/FFFFFF?text=Шоколад'
                   }}
                 />
               </div>
@@ -227,7 +227,7 @@ export default function App() {
             <span className="text-gold text-sm font-semibold tracking-widest uppercase">
               {t('advantages.subtitle')}
             </span>
-            <h2 className="text-4xl font-bold text-gray-800 mt-2 font-serif">
+            <h2 className="text-4xl font-bold text-warm-dark mt-2 font-serif">
               {t('advantages.title')}
             </h2>
             <div className="divider-gold"></div>
@@ -237,35 +237,35 @@ export default function App() {
               <div className="w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-serif text-gold">1</span>
               </div>
-              <h3 className="font-bold text-gray-800 mb-2">{t('advantages.items.chocolate')}</h3>
+              <h3 className="font-bold text-warm-dark mb-2">{t('advantages.items.chocolate')}</h3>
               <p className="text-gray-500 text-sm">{t('advantages.items.chocolateDesc')}</p>
             </div>
             <div className="card text-center p-6">
               <div className="w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-serif text-gold">2</span>
               </div>
-              <h3 className="font-bold text-gray-800 mb-2">{t('advantages.items.spa')}</h3>
+              <h3 className="font-bold text-warm-dark mb-2">{t('advantages.items.spa')}</h3>
               <p className="text-gray-500 text-sm">{t('advantages.items.spaDesc')}</p>
             </div>
             <div className="card text-center p-6">
               <div className="w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-serif text-gold">3</span>
               </div>
-              <h3 className="font-bold text-gray-800 mb-2">{t('advantages.items.restaurant')}</h3>
+              <h3 className="font-bold text-warm-dark mb-2">{t('advantages.items.restaurant')}</h3>
               <p className="text-gray-500 text-sm">{t('advantages.items.restaurantDesc')}</p>
             </div>
             <div className="card text-center p-6">
               <div className="w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-serif text-gold">4</span>
               </div>
-              <h3 className="font-bold text-gray-800 mb-2">{t('advantages.items.view')}</h3>
+              <h3 className="font-bold text-warm-dark mb-2">{t('advantages.items.view')}</h3>
               <p className="text-gray-500 text-sm">{t('advantages.items.viewDesc')}</p>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-warm-dark text-white py-12 border-t border-gold-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
@@ -296,7 +296,7 @@ export default function App() {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+          <div className="border-t border-gold-800 mt-8 pt-8 text-center text-gray-500 text-sm">
             <p>{t('footer.rights')}</p>
           </div>
         </div>
@@ -306,7 +306,7 @@ export default function App() {
 
       {showForm && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-soft max-w-md w-full max-h-[90vh] overflow-y-auto shadow-medium">
+          <div className="bg-white rounded-soft max-w-md w-full max-h-[90vh] overflow-y-auto shadow-warm">
             <div className="sticky top-0 bg-gold text-white p-6 rounded-t-soft">
               <div className="flex justify-between items-center">
                 <h2 className="text-xl font-bold">{t('form.title')}</h2>

@@ -14,7 +14,7 @@ export default function ServiceCard({ service, onOrder, onDetails }) {
             alt={service.title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             onError={(e) => {
-              e.target.src = 'https://placehold.co/400x300/8C7343/FFFFFF?text=' + encodeURIComponent(service.title)
+              e.target.src = 'https://placehold.co/400x300/B8860B/FFFFFF?text=' + encodeURIComponent(service.title)
             }}
           />
           {service.isPopular && (
@@ -30,8 +30,8 @@ export default function ServiceCard({ service, onOrder, onDetails }) {
         </div>
       )}
       <div className="p-6">
-        <h3 className="font-serif text-xl font-bold text-gray-800 mb-1">{service.title}</h3>
-        <p className="text-gray-500 text-sm mb-3">{service.description}</p>
+        <h3 className="font-serif text-xl font-bold text-warm-dark mb-1">{service.title}</h3>
+        <p className="text-gray-600 text-sm mb-3">{service.description}</p>
         <p className="text-2xl font-bold text-gold mb-4">{service.price}</p>
         
         <div className="flex gap-3">

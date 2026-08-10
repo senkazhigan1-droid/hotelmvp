@@ -50,44 +50,44 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== ПРЕМИУМ ДИЗАЙН ОТЕЛЯ ===== */
+/* ===== ТЁПЛЫЙ ДИЗАЙН ОТЕЛЯ ===== */
 
 /* Глобальные стили */
 body {
-  background-color: #F5F2ED;
-  color: #2E2E2E;
+  background-color: #FDF5E6;
+  color: #3D2B1F;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Заголовки */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', Georgia, serif;
-  color: #2E2E2E;
+  color: #3D2B1F;
 }
 
 /* Акцентный цвет */
 .text-gold {
-  color: #8C7343;
+  color: #B8860B;
 }
 .bg-gold {
-  background-color: #8C7343;
+  background-color: #B8860B;
 }
 .border-gold {
-  border-color: #8C7343;
+  border-color: #B8860B;
 }
 .hover\:bg-gold:hover {
-  background-color: #8C7343;
+  background-color: #B8860B;
 }
 .hover\:text-gold:hover {
-  color: #8C7343;
+  color: #B8860B;
 }
 .shadow-gold {
-  box-shadow: 0 4px 20px rgba(140, 115, 67, 0.2);
+  box-shadow: 0 4px 20px rgba(184, 134, 11, 0.2);
 }
 
 /* Кнопки */
 .btn-primary {
-  background-color: #8C7343;
+  background-color: #B8860B;
   color: #FFFFFF;
   padding: 12px 32px;
   border-radius: 8px;
@@ -97,23 +97,23 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 .btn-primary:hover {
-  background-color: #7A6238;
+  background-color: #A0760A;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(140, 115, 67, 0.3);
+  box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #8C7343;
+  color: #B8860B;
   padding: 12px 32px;
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 2px solid #8C7343;
+  border: 2px solid #B8860B;
   cursor: pointer;
 }
 .btn-secondary:hover {
-  background-color: #8C7343;
+  background-color: #B8860B;
   color: #FFFFFF;
 }
 
@@ -121,34 +121,37 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   background-color: #FFFFFF;
   border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 16px rgba(184, 134, 11, 0.06);
   transition: all 0.3s ease;
-  border: 1px solid rgba(140, 115, 67, 0.08);
+  border: 1px solid rgba(184, 134, 11, 0.08);
 }
 .card:hover {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 8px 32px rgba(184, 134, 11, 0.10);
   transform: translateY(-4px);
 }
 
 /* Поля ввода */
 .input-field {
   background-color: #FFFFFF;
-  border: 1px solid #E8E4DE;
+  border: 1px solid #E8DCC8;
   border-radius: 8px;
   padding: 12px 16px;
   transition: all 0.3s ease;
-  color: #2E2E2E;
+  color: #3D2B1F;
   width: 100%;
 }
 .input-field:focus {
-  border-color: #8C7343;
-  box-shadow: 0 0 0 3px rgba(140, 115, 67, 0.15);
+  border-color: #B8860B;
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.15);
   outline: none;
 }
 
-/* Тени для карточек */
+/* Тени */
 .shadow-soft {
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 16px rgba(184, 134, 11, 0.06);
+}
+.shadow-warm {
+  box-shadow: 0 8px 32px rgba(184, 134, 11, 0.10);
 }
 
 /* Скругления */
@@ -162,18 +165,22 @@ h1, h2, h3, h4, h5, h6 {
 /* Линии-разделители */
 .divider-gold {
   height: 2px;
-  background: linear-gradient(to right, transparent, #8C7343, transparent);
+  background: linear-gradient(to right, transparent, #B8860B, transparent);
   width: 60px;
   margin: 16px auto;
 }
 
-/* Кастомные классы */
-.hero-gradient {
-  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%);
+/* Тёплый фон */
+.bg-warm {
+  background-color: #FFF8F0;
+}
+.bg-cream {
+  background-color: #FDF5E6;
 }
 
-.text-shadow {
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+/* Текст */
+.text-warm-dark {
+  color: #3D2B1F;
 }
 
 /* Анимация карточек при скролле */
@@ -199,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 40px rgba(184, 134, 11, 0.12);
 }
 
 .service-card .card-image {
@@ -240,7 +247,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card:hover .card-price {
   transform: scale(1.05);
-  color: #8C7343;
+  color: #B8860B;
 }
 
 .service-card .card-title {
@@ -248,7 +255,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card:hover .card-title {
-  color: #8C7343;
+  color: #B8860B;
 }
 
 /* Стили скролла */
@@ -256,17 +263,17 @@ h1, h2, h3, h4, h5, h6 {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #1a1a2e;
+  background: #FDF5E6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9a84c;
+  background: #B8860B;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8943a;
+  background: #A0760A;
 }
 
 ::selection {
-  background: #c9a84c;
-  color: #1a1a2e;
+  background: #B8860B;
+  color: #FFFFFF;
 }
