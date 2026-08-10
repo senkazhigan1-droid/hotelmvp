@@ -6,40 +6,43 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        serif: ['"Playfair Display"', 'serif'],
-        sans: ['Inter', 'sans-serif'],
-      },
       colors: {
-        amber: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-          800: '#78350F',
-          900: '#451a03',
+        gold: {
+          DEFAULT: '#8C7343',
+          50: '#F8F5EF',
+          100: '#F0EADF',
+          200: '#E0D5C0',
+          300: '#C4B49A',
+          400: '#A69273',
+          500: '#8C7343',
+          600: '#7A6238',
+          700: '#68512E',
+          800: '#564124',
+          900: '#44311A',
+        },
+        cream: {
+          DEFAULT: '#F5F2ED',
+          50: '#FAF8F5',
+          100: '#F5F2ED',
+          200: '#EBE5DD',
+          300: '#E0D8CD',
+          400: '#D6CBBD',
         },
       },
-      animation: {
-        'fade-in': 'fadeIn 0.8s ease-out',
-        'slide-up': 'slideUp 0.6s ease-out',
-        'bounce-slow': 'bounce 2s infinite',
+      fontFamily: {
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(30px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
+      boxShadow: {
+        'soft': '0 2px 16px rgba(0, 0, 0, 0.04)',
+        'medium': '0 4px 24px rgba(0, 0, 0, 0.06)',
+        'gold': '0 4px 20px rgba(140, 115, 67, 0.2)',
+      },
+      borderRadius: {
+        'soft': '12px',
+        'smooth': '16px',
       },
     },
   },
   plugins: [],
-};
+}

@@ -79,67 +79,67 @@ export default function AdminPanel() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-amber-100/80 to-orange-50/90 flex items-center justify-center">
+      <div className="min-h-screen bg-cream flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-amber-700">Загрузка заявок...</p>
+          <div className="w-12 h-12 border-4 border-gold border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Загрузка заявок...</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-amber-100/80 to-orange-50/90 py-8">
+    <div className="min-h-screen bg-cream py-8">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-amber-800 font-serif">Админ-панель</h1>
-            <p className="text-amber-600/70">Управление заявками Mövenpick Hotel</p>
+            <h1 className="text-3xl font-bold text-gray-800 font-serif">Админ-панель</h1>
+            <p className="text-gray-500">Управление заявками Mövenpick Hotel</p>
           </div>
           <button 
             onClick={loadRequests}
-            className="px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors shadow-md hover:shadow-lg"
+            className="btn-primary"
           >
-            🔄 Обновить
+            Обновить
           </button>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-          <div className="bg-white/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-amber-200/30 text-center">
-            <p className="text-2xl font-bold text-amber-800">{stats.total || 0}</p>
-            <p className="text-amber-600/70 text-sm">Всего</p>
+          <div className="card text-center p-4">
+            <p className="text-2xl font-bold text-gold">{stats.total || 0}</p>
+            <p className="text-gray-500 text-sm">Всего</p>
           </div>
-          <div className="bg-yellow-50/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-yellow-200/30 text-center">
+          <div className="card text-center p-4">
             <p className="text-2xl font-bold text-yellow-600">{stats.pending || 0}</p>
-            <p className="text-yellow-600/70 text-sm">Ожидают</p>
+            <p className="text-gray-500 text-sm">Ожидают</p>
           </div>
-          <div className="bg-blue-50/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-blue-200/30 text-center">
+          <div className="card text-center p-4">
             <p className="text-2xl font-bold text-blue-600">{stats.processing || 0}</p>
-            <p className="text-blue-600/70 text-sm">В работе</p>
+            <p className="text-gray-500 text-sm">В работе</p>
           </div>
-          <div className="bg-green-50/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-green-200/30 text-center">
+          <div className="card text-center p-4">
             <p className="text-2xl font-bold text-green-600">{stats.confirmed || 0}</p>
-            <p className="text-green-600/70 text-sm">Подтверждены</p>
+            <p className="text-gray-500 text-sm">Подтверждены</p>
           </div>
-          <div className="bg-gray-50/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200/30 text-center">
+          <div className="card text-center p-4">
             <p className="text-2xl font-bold text-gray-600">{stats.completed || 0}</p>
-            <p className="text-gray-600/70 text-sm">Выполнены</p>
+            <p className="text-gray-500 text-sm">Выполнены</p>
           </div>
         </div>
 
-        <div className="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 mb-8 border border-amber-200/30">
+        <div className="card p-6 mb-8">
           <div className="flex flex-col md:flex-row gap-4">
             <input
               type="text"
-              placeholder="🔍 Поиск по имени, телефону, услуге..."
+              placeholder="Поиск по имени, телефону, услуге..."
               value={searchText}
               onChange={(e) => handleSearch(e.target.value)}
-              className="flex-1 px-4 py-2 border border-amber-200/50 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-white/50 backdrop-blur-sm text-amber-800 placeholder-amber-400/50"
+              className="input-field flex-1"
             />
             <select
               value={sortBy}
               onChange={(e) => handleSort(e.target.value)}
-              className="px-4 py-2 border border-amber-200/50 rounded-xl focus:ring-2 focus:ring-amber-500 bg-white/50 backdrop-blur-sm text-amber-800"
+              className="input-field md:w-48"
             >
               <option value="created_at">По дате</option>
               <option value="name">По имени</option>
@@ -148,38 +148,38 @@ export default function AdminPanel() {
             </select>
             <button 
               onClick={() => handleSort(sortBy)} 
-              className="px-4 py-2 bg-amber-100/50 backdrop-blur-sm rounded-xl hover:bg-amber-200/50 transition-colors text-amber-700 border border-amber-200/30"
+              className="px-4 py-2 bg-cream rounded-soft hover:bg-gold-50 transition-colors text-gray-700 border border-gold-100"
             >
               {sortOrder === 'desc' ? '↓' : '↑'}
             </button>
           </div>
         </div>
 
-        <div className="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-amber-200/30">
+        <div className="card overflow-hidden">
           {requests.length === 0 ? (
-            <div className="p-12 text-center text-amber-600/70">Заявок пока нет</div>
+            <div className="p-12 text-center text-gray-500">Заявок пока нет</div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-amber-50/80 backdrop-blur-sm border-b border-amber-200/30">
+                <thead className="bg-cream border-b border-gold-100">
                   <tr>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-amber-700">ID</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-amber-700">Имя</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-amber-700">Телефон</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-amber-700">Услуга</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-amber-700">Дата</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-amber-700">Статус</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-amber-700">Действия</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">ID</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">Имя</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">Телефон</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">Услуга</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">Дата</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">Статус</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">Действия</th>
                   </tr>
                 </thead>
                 <tbody>
                   {requests.map((req) => (
-                    <tr key={req.id} className="border-b border-amber-100/50 hover:bg-amber-50/30 transition-colors">
-                      <td className="px-4 py-3 text-sm font-mono text-amber-600/70">{String(req.id).slice(0, 8)}</td>
-                      <td className="px-4 py-3 font-medium text-amber-800">{req.name}</td>
-                      <td className="px-4 py-3 text-amber-600/70">{req.phone}</td>
-                      <td className="px-4 py-3 text-amber-600/70">{req.service}</td>
-                      <td className="px-4 py-3 text-amber-600/70">{req.date}</td>
+                    <tr key={req.id} className="border-b border-gold-50 hover:bg-cream transition-colors">
+                      <td className="px-4 py-3 text-sm font-mono text-gray-500">{String(req.id).slice(0, 8)}</td>
+                      <td className="px-4 py-3 font-medium text-gray-800">{req.name}</td>
+                      <td className="px-4 py-3 text-gray-600">{req.phone}</td>
+                      <td className="px-4 py-3 text-gray-600">{req.service}</td>
+                      <td className="px-4 py-3 text-gray-600">{req.date}</td>
                       <td className="px-4 py-3">
                         <select
                           value={req.status}

@@ -7,15 +7,15 @@ export default function LanguageSwitcher({ variant = 'header' }) {
 
   if (variant === 'header') {
     return (
-      <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full p-1 border border-amber-400/20">
+      <div className="flex items-center gap-1 bg-cream rounded-full p-1 border border-gold-100">
         {languages.map((lang) => (
           <button
             key={lang.code}
             onClick={() => changeLanguage(lang.code)}
-            className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ${
+            className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
               currentLanguage === lang.code
-                ? 'bg-amber-500 text-white shadow-lg'
-                : 'text-amber-100/70 hover:text-white hover:bg-white/10'
+                ? 'bg-gold text-white shadow-gold'
+                : 'text-gray-500 hover:text-gold hover:bg-gold-50'
             }`}
           >
             {lang.label}
@@ -31,10 +31,10 @@ export default function LanguageSwitcher({ variant = 'header' }) {
         <button
           key={lang.code}
           onClick={() => changeLanguage(lang.code)}
-          className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+          className={`px-4 py-2 rounded-soft font-medium transition-all duration-300 ${
             currentLanguage === lang.code
-              ? 'bg-amber-500 text-white shadow-lg'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              ? 'bg-gold text-white shadow-gold'
+              : 'bg-white text-gray-600 hover:bg-gold-50 hover:text-gold border border-gold-100'
           }`}
         >
           {lang.label}

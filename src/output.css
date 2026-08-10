@@ -50,6 +50,123 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== ПРЕМИУМ ДИЗАЙН ОТЕЛЯ ===== */
+
+/* Глобальные стили */
+body {
+  background-color: #F5F2ED;
+  color: #2E2E2E;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #2E2E2E;
+}
+
+/* Акцентный цвет */
+.text-gold {
+  color: #8C7343;
+}
+.bg-gold {
+  background-color: #8C7343;
+}
+.border-gold {
+  border-color: #8C7343;
+}
+.hover\:bg-gold:hover {
+  background-color: #8C7343;
+}
+.hover\:text-gold:hover {
+  color: #8C7343;
+}
+.shadow-gold {
+  box-shadow: 0 4px 20px rgba(140, 115, 67, 0.2);
+}
+
+/* Кнопки */
+.btn-primary {
+  background-color: #8C7343;
+  color: #FFFFFF;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #7A6238;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(140, 115, 67, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #8C7343;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #8C7343;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background-color: #8C7343;
+  color: #FFFFFF;
+}
+
+/* Карточки */
+.card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(140, 115, 67, 0.08);
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  transform: translateY(-4px);
+}
+
+/* Поля ввода */
+.input-field {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4DE;
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+  color: #2E2E2E;
+  width: 100%;
+}
+.input-field:focus {
+  border-color: #8C7343;
+  box-shadow: 0 0 0 3px rgba(140, 115, 67, 0.15);
+  outline: none;
+}
+
+/* Тени для карточек */
+.shadow-soft {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Скругления */
+.rounded-soft {
+  border-radius: 12px;
+}
+.rounded-smooth {
+  border-radius: 16px;
+}
+
+/* Линии-разделители */
+.divider-gold {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #8C7343, transparent);
+  width: 60px;
+  margin: 16px auto;
+}
+
 /* Кастомные классы */
 .hero-gradient {
   background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%);
@@ -57,10 +174,6 @@
 
 .text-shadow {
   text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-.shadow-gold {
-  box-shadow: 0 0 30px rgba(217, 119, 6, 0.3);
 }
 
 /* Анимация карточек при скролле */
@@ -127,7 +240,7 @@
 
 .service-card:hover .card-price {
   transform: scale(1.05);
-  color: #d97706;
+  color: #8C7343;
 }
 
 .service-card .card-title {
@@ -135,7 +248,7 @@
 }
 
 .service-card:hover .card-title {
-  color: #78350F;
+  color: #8C7343;
 }
 
 /* Стили скролла */
