@@ -10,11 +10,13 @@ export default function Header() {
     <header className="bg-white border-b border-gold-100 shadow-soft">
       <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          {/* Только логотип (без текста, звёзд и SWISS LUXURY) */}
+          {/* Логотип */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-white text-xl font-serif font-bold">
-              MH
-            </div>
+            <img 
+              src="/images/movenpick-logo.png" 
+              alt="Mövenpick Hotel" 
+              className="h-12 w-auto object-contain"
+            />
           </div>
 
           {/* Навигация */}
