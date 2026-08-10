@@ -1,3 +1,4 @@
+// src/utils/requestUtils.js
 import { supabase } from '../lib/supabaseClient'
 
 export const RequestStatus = {
@@ -9,63 +10,125 @@ export const RequestStatus = {
 }
 
 export const StatusColors = {
-  pending: 'bg-yellow-100 text-yellow-800',
-  processing: 'bg-blue-100 text-blue-800',
-  confirmed: 'bg-green-100 text-green-800',
-  completed: 'bg-gray-100 text-gray-800',
-  cancelled: 'bg-red-100 text-red-800',
+  [RequestStatus.PENDING]: 'bg-yellow-100 text-yellow-800',
+  [RequestStatus.PROCESSING]: 'bg-blue-100 text-blue-800',
+  [RequestStatus.CONFIRMED]: 'bg-green-100 text-green-800',
+  [RequestStatus.COMPLETED]: 'bg-gray-100 text-gray-800',
+  [RequestStatus.CANCELLED]: 'bg-red-100 text-red-800',
 }
 
 export const StatusLabels = {
-  pending: 'Ожидает обработки',
-  processing: 'Обрабатывается',
-  confirmed: 'Подтверждена',
-  completed: 'Выполнена',
-  cancelled: 'Отменена',
+  [RequestStatus.PENDING]: 'Ожидает обработки',
+  [RequestStatus.PROCESSING]: 'Обрабатывается',
+  [RequestStatus.CONFIRMED]: 'Подтверждена',
+  [RequestStatus.COMPLETED]: 'Выполнена',
+  [RequestStatus.CANCELLED]: 'Отменена',
 }
 
 export const getAllRequests = async () => {
-  const { data, error } = await supabase
-    .from('requests')
-    .select('*')
-    .order('created_at', { ascending: false })
-  if (error) return []
-  return data || []
+  try {
+    const { data, error } = await supabase
+      .from('requests')
+      .select('*')
+      .order('created_at', { ascending: false })
+    if (error) throw error
+    return data || []
+  } catch (error) {
+    console.error('Ошибка получения заявок:', error)
+    return []
+  }
 }
 
 export const addRequest = async (formData) => {
-  const { data, error } = await supabase
-    .from('requests')
-    .insert([{
-      name: formData.name,
-      phone: formData.phone,
-      email: formData.email || '',
-      service: formData.service || '',
-      date: formData.date || null,
-      time: formData.time || null,
-      guests: parseInt(formData.guests) || 1,
-      comment: formData.comment || '',
-      status: RequestStatus.PENDING,
-    }])
-    .select()
-  if (error) return null
-  return data?.[0] || null
+  try {
+    const { data, error } = await supabase
+      .from('requests')
+      .insert([{
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email || '',
+        service: formData.service || '',
+        date: formData.date || null,
+        time: formData.time || null,
+        guests: parseInt(formData.guests) || 1,
+        comment: formData.comment || '',
+        status: RequestStatus.PENDING,
+      }])
+      .select()
+    if (error) throw error
+    return data?.[0] || null
+  } catch (error) {
+    console.error('Ошибка добавления заявки:', error)
+    return null
+  }
 }
 
 export const updateRequest = async (id, updates) => {
-  const { data, error } = await supabase
-    .from('requests')
-    .update(updates)
-    .eq('id', id)
-    .select()
-  if (error) return null
-  return data?.[0] || null
+  try {
+    const { data, error } = await supabase
+      .from('requests')
+      .update(updates)
+      .eq('id', id)
+      .select()
+    if (error) throw error
+    return data?.[0] || null
+  } catch (error) {
+    console.error('Ошибка обновления заявки:', error)
+    return null
+  }
 }
 
 export const changeRequestStatus = async (id, status) => {
   return updateRequest(id, { status })
 }
 
+export const deleteRequest = async (id) => {
+  try {
+    const { error } = await supabase
+      .from('requests')
+      .delete()
+      .eq('id', id)
+    if (error) throw error
+    return true
+  } catch (error) {
+    console.error('Ошибка удаления заявки:', error)
+    return false
+  }
+}
+
+// ✅ ФУНКЦИЯ ДЛЯ ПОИСКА
+export const searchRequests = (requests, searchText) => {
+  const lower = searchText.toLowerCase()
+  return requests.filter(r =>
+    r.name?.toLowerCase().includes(lower) ||
+    r.phone?.includes(searchText) ||
+    r.email?.toLowerCase().includes(lower) ||
+    r.service?.toLowerCase().includes(lower)
+  )
+}
+
+// ✅ ФУНКЦИЯ ДЛЯ СОРТИРОВКИ
+export const sortRequests = (requests, sortBy = 'created_at', order = 'desc') => {
+  const sorted = [...requests]
+  sorted.sort((a, b) => {
+    let valA = a[sortBy]
+    let valB = b[sortBy]
+    if (sortBy === 'created_at' || sortBy === 'date') {
+      valA = new Date(valA)
+      valB = new Date(valB)
+    }
+    if (typeof valA === 'string') {
+      valA = valA.toLowerCase()
+      valB = valB.toLowerCase()
+    }
+    if (valA < valB) return order === 'asc' ? -1 : 1
+    if (valA > valB) return order === 'asc' ? 1 : -1
+    return 0
+  })
+  return sorted
+}
+
+// ✅ ФУНКЦИЯ ДЛЯ СТАТИСТИКИ
 export const getRequestsStats = (requests) => {
   const stats = {
     total: requests.length,
@@ -83,12 +146,4 @@ export const getRequestsStats = (requests) => {
   })
 
   return stats
-}
-
-export const deleteRequest = async (id) => {
-  const { error } = await supabase
-    .from('requests')
-    .delete()
-    .eq('id', id)
-  return !error
 }
