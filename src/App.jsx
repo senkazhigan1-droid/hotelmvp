@@ -6,7 +6,7 @@ import ServiceCard from './components/ServiceCard'
 import ServiceModal from './components/ServiceModal'
 import RequestForm from './components/RequestForm'
 import SuccessScreen from './components/SuccessScreen'
-import Header from './components/header'
+import Header from './components/Header'
 import Hero from './components/Hero'
 import './output.css'
 
