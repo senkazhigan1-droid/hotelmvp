@@ -1,7 +1,10 @@
 // src/components/ServiceModal.jsx
 import React from 'react'
+import { useLanguage } from '../hooks/useLanguage'
 
 export default function ServiceModal({ service, onClose, onOrder }) {
+  const { t } = useLanguage()
+  
   if (!service) return null
 
   return (
@@ -24,12 +27,12 @@ export default function ServiceModal({ service, onClose, onOrder }) {
 
           <div className="bg-warm border border-gold-100 rounded-soft p-6 mb-6">
             <div className="flex justify-between items-center">
-              <span className="text-gray-600 font-medium">Стоимость</span>
+              <span className="text-gray-600 font-medium">{t('services.price') || 'Стоимость'}</span>
               <span className="text-3xl font-bold text-gold">{service.price}</span>
             </div>
             {service.duration && (
               <div className="flex justify-between items-center mt-3 pt-3 border-t border-gold-100">
-                <span className="text-gray-600 font-medium">Длительность</span>
+                <span className="text-gray-600 font-medium">{t('services.duration') || 'Длительность'}</span>
                 <span className="text-warm-dark font-semibold">{service.duration}</span>
               </div>
             )}
@@ -37,7 +40,7 @@ export default function ServiceModal({ service, onClose, onOrder }) {
 
           {service.includes && service.includes.length > 0 && (
             <div className="mb-8">
-              <h3 className="font-semibold text-warm-dark mb-4 text-lg">Входит в услугу:</h3>
+              <h3 className="font-semibold text-warm-dark mb-4 text-lg">{t('services.includes') || 'Входит в услугу:'}</h3>
               <div className="grid grid-cols-2 gap-2">
                 {service.includes.map((item, index) => (
                   <div key={index} className="flex items-center gap-2 text-gray-600 bg-warm rounded-soft px-4 py-2">
@@ -51,10 +54,10 @@ export default function ServiceModal({ service, onClose, onOrder }) {
 
           <div className="flex gap-3">
             <button onClick={() => onOrder(service)} className="flex-1 px-6 py-4 bg-gold text-white rounded-soft hover:bg-gold-600 transition-all duration-300 font-semibold shadow-gold hover:shadow-lg">
-              Забронировать сейчас
+              {t('services.book') || 'Забронировать сейчас'}
             </button>
             <button onClick={onClose} className="px-6 py-4 border border-gray-300 text-gray-700 rounded-soft hover:bg-gray-50 transition-colors font-medium">
-              Закрыть
+              {t('services.close') || 'Закрыть'}
             </button>
           </div>
         </div>

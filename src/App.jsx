@@ -102,7 +102,6 @@ export default function App() {
       <Header />
       <Hero onScroll={handleHeroScroll} showAdminLink={false} />
 
-      {/* Секция Услуги */}
       <section id="services" className="container mx-auto px-4 py-16 md:py-24">
         <div className="text-center mb-12 md:mb-16">
           <span className="text-gold text-sm font-semibold tracking-widest uppercase">
@@ -146,7 +145,6 @@ export default function App() {
         )}
       </section>
 
-      {/* Секция О нас */}
       <section id="about" className="bg-warm py-16 md:py-24 border-t border-gold-100">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -223,7 +221,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Секция Преимущества */}
       <section className="py-16 md:py-24 bg-cream">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -268,9 +265,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* ============================================= */}
-      {/* ⬇️⬇️⬇️ НОВАЯ СЕКЦИЯ "КОНТАКТЫ" ⬇️⬇️⬇️ */}
-      {/* ============================================= */}
       <section id="contact" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -287,7 +281,6 @@ export default function App() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {/* Левая колонка - адрес и контакты */}
             <div>
               <h3 className="font-serif text-xl font-bold text-warm-dark mb-4">Наш адрес</h3>
               <p className="text-gray-600 mb-2">Швейцария, Интерлакен</p>
@@ -299,13 +292,11 @@ export default function App() {
               <p className="text-gray-600 mb-2">✉️ info@movenpick-hotel.ch</p>
               <p className="text-gray-600">🌐 www.movenpick-hotel.ch</p>
 
-              {/* Кнопка для быстрой связи */}
               <a href="#services" className="btn-primary inline-block mt-6">
                 Забронировать сейчас
               </a>
             </div>
 
-            {/* Правая колонка - часы работы */}
             <div>
               <h3 className="font-serif text-xl font-bold text-warm-dark mb-4">Часы работы</h3>
               <div className="space-y-3">
@@ -331,7 +322,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Дополнительная информация */}
               <div className="mt-6 p-4 bg-warm rounded-soft border border-gold-100">
                 <p className="text-sm text-gray-600">
                   🍫 <span className="font-medium text-warm-dark">Ежедневный шоколадный час</span>
@@ -343,11 +333,7 @@ export default function App() {
           </div>
         </div>
       </section>
-      {/* ============================================= */}
-      {/* ⬆️⬆️⬆️ КОНЕЦ СЕКЦИИ "КОНТАКТЫ" ⬆️⬆️⬆️ */}
-      {/* ============================================= */}
 
-      {/* Футер */}
       <footer className="bg-warm-dark text-white py-12 border-t border-gold-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -396,7 +382,9 @@ export default function App() {
                 <button onClick={closeForm} className="text-white hover:text-gray-200 text-2xl leading-none">✕</button>
               </div>
               {selectedService && (
-                <p className="text-gold-100 text-sm mt-1">Услуга: {selectedService.title}</p>
+                <p className="text-gold-100 text-sm mt-1">
+                  {t('form.service')}: {selectedService.title}
+                </p>
               )}
             </div>
             <div className="p-6">

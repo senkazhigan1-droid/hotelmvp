@@ -1,9 +1,5 @@
 {
   "header": {
-    "title": "Mövenpick Hotel",
-    "subtitle": "Swiss Hospitality",
-    "chocolateHour": "Chocolate Hour",
-    "chocolateTime": "daily 3:00–4:00 PM",
     "nav": {
       "services": "Services",
       "about": "About",
@@ -11,7 +7,6 @@
     }
   },
   "hero": {
-    "title": "Mövenpick Hotel",
     "subtitle": "Swiss Hospitality",
     "description": "Discover a world of luxury where every detail is designed for your perfect stay.",
     "buttons": {
@@ -28,6 +23,10 @@
     "details": "Details",
     "book": "Book",
     "free": "Free",
+    "price": "Price",
+    "duration": "Duration",
+    "includes": "Includes:",
+    "close": "Close",
     "list": {
       "chocolate": {
         "title": "Chocolate Hour",
@@ -124,27 +123,5 @@
     "chocolateBonus": "A chocolate compliment awaits you!",
     "newRequest": "New Request",
     "close": "Close"
-  },
-  "admin": {
-    "title": "Admin Panel",
-    "subtitle": "Manage Mövenpick Hotel requests",
-    "stats": {
-      "total": "Total",
-      "pending": "Pending",
-      "processing": "Processing",
-      "confirmed": "Confirmed",
-      "completed": "Completed"
-    },
-    "search": "Search by name, phone, service...",
-    "sortBy": {
-      "date": "By date",
-      "name": "By name",
-      "service": "By service",
-      "status": "By status"
-    },
-    "update": "Update",
-    "noRequests": "No requests yet",
-    "actions": "Actions",
-    "delete": "Delete"
   }
 }
