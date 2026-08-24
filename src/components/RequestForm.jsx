@@ -6,9 +6,6 @@ export default function RequestForm({ onSubmit, initialData }) {
   const { t } = useLanguage()
   
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
     service: initialData?.service || '',
     date: '',
     time: '',
@@ -27,43 +24,11 @@ export default function RequestForm({ onSubmit, initialData }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Услуга */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.name')} *</label>
-        <input 
-          type="text" 
-          name="name" 
-          value={formData.name} 
-          onChange={handleChange} 
-          required
-          className="input-field" 
-        />
-      </div>
-      
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.phone')} *</label>
-        <input 
-          type="tel" 
-          name="phone" 
-          value={formData.phone} 
-          onChange={handleChange} 
-          required
-          className="input-field" 
-        />
-      </div>
-      
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.email')}</label>
-        <input 
-          type="email" 
-          name="email" 
-          value={formData.email} 
-          onChange={handleChange}
-          className="input-field" 
-        />
-      </div>
-      
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.service')}</label>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          {t('form.service')} *
+        </label>
         <input 
           type="text" 
           name="service" 
@@ -71,35 +36,44 @@ export default function RequestForm({ onSubmit, initialData }) {
           onChange={handleChange}
           className="input-field bg-cream cursor-not-allowed" 
           readOnly 
+          required
         />
       </div>
       
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.date')} *</label>
-          <input 
-            type="date" 
-            name="date" 
-            value={formData.date} 
-            onChange={handleChange} 
-            required
-            className="input-field" 
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.time')}</label>
-          <input 
-            type="time" 
-            name="time" 
-            value={formData.time} 
-            onChange={handleChange}
-            className="input-field" 
-          />
-        </div>
+      {/* Дата */}
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          {t('form.date')} *
+        </label>
+        <input 
+          type="date" 
+          name="date" 
+          value={formData.date} 
+          onChange={handleChange} 
+          required
+          className="input-field" 
+        />
       </div>
       
+      {/* Время */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.guests')}</label>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          {t('form.time')}
+        </label>
+        <input 
+          type="time" 
+          name="time" 
+          value={formData.time} 
+          onChange={handleChange}
+          className="input-field" 
+        />
+      </div>
+      
+      {/* Количество гостей */}
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          {t('form.guests')}
+        </label>
         <input 
           type="number" 
           name="guests" 
@@ -111,8 +85,11 @@ export default function RequestForm({ onSubmit, initialData }) {
         />
       </div>
       
+      {/* Комментарий */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.comment')}</label>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          {t('form.comment')}
+        </label>
         <textarea 
           name="comment" 
           value={formData.comment} 
@@ -122,6 +99,7 @@ export default function RequestForm({ onSubmit, initialData }) {
         />
       </div>
       
+      {/* Кнопка отправки */}
       <button 
         type="submit"
         className="w-full py-4 bg-gold text-white rounded-soft hover:bg-gold-600 transition-all duration-300 font-semibold text-lg shadow-gold hover:shadow-lg"

@@ -106,9 +106,6 @@
   },
   "form": {
     "title": "Submit a Request",
-    "name": "Name",
-    "phone": "Phone",
-    "email": "Email",
     "service": "Service",
     "date": "Date",
     "time": "Time",
@@ -118,7 +115,7 @@
   },
   "success": {
     "title": "Request Sent!",
-    "thanks": "Thank you, {name}!",
+    "thanks": "Thank you, guest!",
     "message": "We will contact you shortly.",
     "chocolateBonus": "A chocolate compliment awaits you!",
     "newRequest": "New Request",

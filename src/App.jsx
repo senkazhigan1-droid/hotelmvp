@@ -8,6 +8,7 @@ import RequestForm from './components/RequestForm'
 import SuccessScreen from './components/SuccessScreen'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import { getImagePath } from './utils/paths'
 import './output.css'
 
 export default function App() {
@@ -181,7 +182,7 @@ export default function App() {
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
                 <img 
-                  src="/images/room.jpg" 
+                  src={getImagePath('images/room.jpg')}
                   alt="Номер" 
                   className="rounded-soft shadow-medium w-full h-48 object-cover border border-gold-100"
                   onError={(e) => {
@@ -189,7 +190,7 @@ export default function App() {
                   }}
                 />
                 <img 
-                  src="/images/spa.jpg" 
+                  src={getImagePath('images/spa.jpg')}
                   alt="Спа" 
                   className="rounded-soft shadow-medium w-full h-48 object-cover mt-8 border border-gold-100"
                   onError={(e) => {
@@ -197,7 +198,7 @@ export default function App() {
                   }}
                 />
                 <img 
-                  src="/images/restaurant.jpg" 
+                  src={getImagePath('images/restaurant.jpg')}
                   alt="Ресторан" 
                   className="rounded-soft shadow-medium w-full h-48 object-cover border border-gold-100"
                   onError={(e) => {
@@ -205,7 +206,7 @@ export default function App() {
                   }}
                 />
                 <img 
-                  src="/images/chocolate.jpg" 
+                  src={getImagePath('images/chocolate.jpg')}
                   alt="Шоколад" 
                   className="rounded-soft shadow-medium w-full h-48 object-cover mt-8 border border-gold-100"
                   onError={(e) => {
@@ -268,16 +269,10 @@ export default function App() {
       <section id="contact" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="text-gold text-sm font-semibold tracking-widest uppercase">
-              Контакты
-            </span>
-            <h2 className="text-4xl font-bold text-warm-dark mt-2 font-serif">
-              Свяжитесь с нами
-            </h2>
+            <span className="text-gold text-sm font-semibold tracking-widest uppercase">Контакты</span>
+            <h2 className="text-4xl font-bold text-warm-dark mt-2 font-serif">Свяжитесь с нами</h2>
             <div className="divider-gold"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Мы всегда рады ответить на ваши вопросы
-            </p>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">Мы всегда рады ответить на ваши вопросы</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
@@ -292,9 +287,7 @@ export default function App() {
               <p className="text-gray-600 mb-2">✉️ info@movenpick-hotel.ch</p>
               <p className="text-gray-600">🌐 www.movenpick-hotel.ch</p>
 
-              <a href="#services" className="btn-primary inline-block mt-6">
-                Забронировать сейчас
-              </a>
+              <a href="#services" className="btn-primary inline-block mt-6">Забронировать сейчас</a>
             </div>
 
             <div>

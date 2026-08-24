@@ -1,16 +1,20 @@
 // src/components/Hero.jsx
 import React from 'react'
 import { useLanguage } from '../hooks/useLanguage'
+import { getImagePath } from '../utils/paths'
 
 export default function Hero({ onScroll, showAdminLink = false }) {
   const { t } = useLanguage()
 
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-cream">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-gold blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-gold blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-3xl"></div>
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: `url(${getImagePath('images/hero-bg.jpg')})`,
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/80 to-cream/90"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-center py-20">

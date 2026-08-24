@@ -44,15 +44,13 @@ export const addRequest = async (formData) => {
     const { data, error } = await supabase
       .from('requests')
       .insert([{
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email || '',
         service: formData.service || '',
         date: formData.date || null,
         time: formData.time || null,
         guests: parseInt(formData.guests) || 1,
         comment: formData.comment || '',
         status: RequestStatus.PENDING,
+        // name, phone, email — УДАЛЕНЫ
       }])
       .select()
     if (error) throw error
@@ -96,18 +94,14 @@ export const deleteRequest = async (id) => {
   }
 }
 
-// ✅ ФУНКЦИЯ ДЛЯ ПОИСКА
 export const searchRequests = (requests, searchText) => {
   const lower = searchText.toLowerCase()
   return requests.filter(r =>
-    r.name?.toLowerCase().includes(lower) ||
-    r.phone?.includes(searchText) ||
-    r.email?.toLowerCase().includes(lower) ||
-    r.service?.toLowerCase().includes(lower)
+    r.service?.toLowerCase().includes(lower) ||
+    r.comment?.toLowerCase().includes(lower)
   )
 }
 
-// ✅ ФУНКЦИЯ ДЛЯ СОРТИРОВКИ
 export const sortRequests = (requests, sortBy = 'created_at', order = 'desc') => {
   const sorted = [...requests]
   sorted.sort((a, b) => {
@@ -128,7 +122,6 @@ export const sortRequests = (requests, sortBy = 'created_at', order = 'desc') =>
   return sorted
 }
 
-// ✅ ФУНКЦИЯ ДЛЯ СТАТИСТИКИ
 export const getRequestsStats = (requests) => {
   const stats = {
     total: requests.length,
@@ -138,12 +131,10 @@ export const getRequestsStats = (requests) => {
     completed: 0,
     cancelled: 0
   }
-
   requests.forEach(r => {
     if (stats[r.status] !== undefined) {
       stats[r.status]++
     }
   })
-
   return stats
 }

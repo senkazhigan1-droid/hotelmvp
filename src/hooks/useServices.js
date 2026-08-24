@@ -1,5 +1,6 @@
 // src/hooks/useServices.js
 import { useLanguage } from './useLanguage'
+import { getImagePath } from '../utils/paths'
 
 export const useServices = () => {
   const { t } = useLanguage()
@@ -14,7 +15,7 @@ export const useServices = () => {
       price: t(`services.list.${key}.price`),
       category: getCategory(key),
       isPopular: ['chocolate', 'spa', 'restaurant', 'room'].includes(key),
-      image: `/images/${key}.jpg`,
+      image: getImagePath(`images/${key}.jpg`),
       duration: getDuration(key),
       includes: getIncludes(key)
     }))
